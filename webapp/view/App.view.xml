@@ -1,0 +1,39 @@
+<mvc:View displayBlock="true" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:unified="sap.ui.unified" controllerName="opensap.myapp.controller.App">
+	<App>
+		<pages>
+			<Page title="Template App SAPUI5 OPEN-SAP">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<PlanningCalendar id="PC1" startDate="{path: '/startDate'}" rows="{path: '/people'}" appointmentSelect="handleAppointmentSelect">
+							<toolbarContent>
+								<Title text="{i18n>titlePlanningCalendar}" titleStyle="auto"/>
+							</toolbarContent>
+							<rows>
+								<PlanningCalendarRow icon="{pic}" title="{name}" text="{role}" appointments="{appointments}" intervalHeaders="{headers}">
+									<appointments>
+										<unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" text="{info}" type="{type}"
+											tentative="{tentative}"></unified:CalendarAppointment>
+									</appointments>
+									<intervalHeaders>
+										<unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" type="{type}"></unified:CalendarAppointment>
+									</intervalHeaders>
+								</PlanningCalendarRow>
+							</rows>
+						</PlanningCalendar>
+					</VBox>
+					<Panel id="planningDetailsPanel"  headerText="{i18n>planningDetails}" visible="false">
+						<content>
+							<l:Grid>
+								<Text text="{title}"/>
+								<Text text="{start}"/>
+								<Text text="{end}"/>		
+								<Text text="{info}"/>
+							</l:Grid>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
